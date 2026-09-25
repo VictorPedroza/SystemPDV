@@ -9,6 +9,12 @@ public class User {
     private String name;
     private String cpf;
     
+    public User(String id, String name, String cpf) {
+        this.id = id;
+        this.name = name;
+        this.cpf = cpf;
+    }
+    
     // Getters & Setters
     public String getId() { return id; }
     public String getName() { return name; }
