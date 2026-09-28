@@ -1,9 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package view;
+
+import java.awt.CardLayout;
 
 /**
  *
@@ -11,11 +8,31 @@ package view;
  */
 public class Interface extends javax.swing.JFrame {
 
+    private CardLayout layout;
+
     /**
      * Creates new form Interface
      */
     public Interface() {
         initComponents();
+
+        layout = new CardLayout();
+        InterfacePanel.setLayout(layout);
+
+        InterfacePanel.add(new MenuScreen(), "MENU");
+        InterfacePanel.add(new SalesScreen(), "PDV");
+        InterfacePanel.add(new SelfSalesScreen(), "AUTOATENDIMENTO");
+        InterfacePanel.add(new ManagementScreen(), "GERENCIA");
+
+        layout.show(InterfacePanel, "MENU");
+
+        setSize(1200, 700);
+        setResizable(false);
+        setLocationRelativeTo(null);
+    }
+
+    public void showScreen(String screen) {
+        layout.show(InterfacePanel, screen);
     }
 
     /**
@@ -27,18 +44,16 @@ public class Interface extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        InterfacePanel = new javax.swing.JPanel();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(1500, 700));
+        setResizable(false);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        InterfacePanel.setBackground(new java.awt.Color(255, 255, 255));
+        InterfacePanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        getContentPane().add(InterfacePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 900, 700));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -79,5 +94,6 @@ public class Interface extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel InterfacePanel;
     // End of variables declaration//GEN-END:variables
 }
