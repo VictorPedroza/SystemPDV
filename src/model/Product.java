@@ -7,7 +7,6 @@ import java.math.BigDecimal;
  * @author victo
  */
 public class Product {
-    private Long id;
     private String description;
     private String barcode;
     private String sku;
@@ -15,8 +14,7 @@ public class Product {
     private Boolean active;
     private Integer ncm;
     
-    public Product(Long id, String description, String barcode, String sku, BigDecimal value, Integer ncm) {
-        this.id = id;
+    public Product(String description, String barcode, String sku, BigDecimal value, Integer ncm) {
         this.description = description;
         this.barcode = barcode;
         this.sku = sku;
@@ -26,7 +24,6 @@ public class Product {
     }
     
     // Getters & Setters
-    public Long getId() { return id; }
     public String getDescription() { return description; }
     public String getBarcode() { return barcode; }
     public String getSku() { return sku; }
