@@ -7,6 +7,7 @@ import java.math.BigDecimal;
  * @author victo
  */
 public class Product {
+    private String id;
     private String description;
     private String barcode;
     private String sku;
@@ -24,6 +25,7 @@ public class Product {
     }
     
     // Getters & Setters
+    public String getId() { return id; }
     public String getDescription() { return description; }
     public String getBarcode() { return barcode; }
     public String getSku() { return sku; }
