@@ -41,7 +41,7 @@ public class ManagementProductsScreen extends javax.swing.JPanel {
         txtDescription = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         txtSku = new javax.swing.JTextField();
-        txtSku1 = new javax.swing.JTextField();
+        txtGetSku = new javax.swing.JTextField();
         btnGetProduct = new javax.swing.JButton();
         btnSaveProduct = new javax.swing.JButton();
         btnDeleteProduct = new javax.swing.JButton();
@@ -70,13 +70,18 @@ public class ManagementProductsScreen extends javax.swing.JPanel {
 
         jLabel3.setText("SKU");
 
-        txtSku1.addActionListener(new java.awt.event.ActionListener() {
+        txtGetSku.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtSku1ActionPerformed(evt);
+                txtGetSkuActionPerformed(evt);
             }
         });
 
         btnGetProduct.setText("Consultar");
+        btnGetProduct.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGetProductActionPerformed(evt);
+            }
+        });
 
         btnSaveProduct.setText("Salvar");
         btnSaveProduct.addActionListener(new java.awt.event.ActionListener() {
@@ -127,7 +132,7 @@ public class ManagementProductsScreen extends javax.swing.JPanel {
                         .addGroup(layout.createSequentialGroup()
                             .addComponent(jLabel1)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(txtSku1, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtGetSku, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addComponent(btnGetProduct)))
                     .addComponent(jLabel2)
@@ -167,7 +172,7 @@ public class ManagementProductsScreen extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel1)
-                            .addComponent(txtSku1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtGetSku, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnGetProduct))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -221,9 +226,36 @@ public class ManagementProductsScreen extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_rbtnActiveActionPerformed
 
-    private void txtSku1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSku1ActionPerformed
+    private void txtGetSkuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtGetSkuActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtSku1ActionPerformed
+    }//GEN-LAST:event_txtGetSkuActionPerformed
+
+    private void btnGetProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGetProductActionPerformed
+       String sku = txtGetSku.getText();
+       
+       ProductDAO pDAO = new ProductDAO();
+       Product p = pDAO.get(sku);
+       
+       if (p == null) {
+           txtSku.setText("");
+           txtCodBar.setText("");
+           txtDescription.setText("");
+           txtValue.setText("");
+           txtNcm.setText("");
+           groupIsActive.clearSelection();
+       } else {
+           txtSku.setText(p.getSku());
+           txtCodBar.setText(p.getBarcode());
+           txtDescription.setText(p.getDescription());
+           txtValue.setText(p.getValue().toString());
+           if (p.isActive()) {
+               rbtnActive.setSelected(true);
+           } else {
+               rbtnInactive.setSelected(true);
+           }
+           txtNcm.setText(p.getNcm().toString());
+       }
+    }//GEN-LAST:event_btnGetProductActionPerformed
     
     public void getProducts() {
         ProductDAO p = new ProductDAO();
@@ -235,9 +267,9 @@ public class ManagementProductsScreen extends javax.swing.JPanel {
         for (Product prod : products) {
             Object[] obj = new Object[]{
                 prod.getId(),
+                prod.getSku(),
                 prod.getDescription(),
                 prod.getBarcode(),
-                prod.getSku(),
                 prod.getValue(),
                 prod.isActive(),
                 prod.getNcm()
@@ -263,9 +295,9 @@ public class ManagementProductsScreen extends javax.swing.JPanel {
     private javax.swing.JTable tblProduct;
     private javax.swing.JTextField txtCodBar;
     private javax.swing.JTextField txtDescription;
+    private javax.swing.JTextField txtGetSku;
     private javax.swing.JTextField txtNcm;
     private javax.swing.JTextField txtSku;
-    private javax.swing.JTextField txtSku1;
     private javax.swing.JTextField txtValue;
     // End of variables declaration//GEN-END:variables
 }
