@@ -39,12 +39,12 @@ public class ProductDAO {
             stmt.execute();
 
         } catch (SQLException e) {
-            System.out.println("Erro ao inserir pessoa: " + e.getMessage());
+            System.out.println("Erro ao inserir produto: " + e.getMessage());
         }
     }
 
     public void delete(String sku) {
-        String sql = "DELETE FROM product WHEE sku = ?";
+        String sql = "DELETE FROM product WHERE sku = ?";
 
         try {
             PreparedStatement stmt = conn.prepareStatement(sql);
@@ -53,7 +53,7 @@ public class ProductDAO {
             stmt.execute();
 
         } catch (SQLException e) {
-            System.out.println("Erro ao inserir pessoa: " + e.getMessage());
+            System.out.println("Erro ao excluir produto: " + e.getMessage());
         }
     }
 

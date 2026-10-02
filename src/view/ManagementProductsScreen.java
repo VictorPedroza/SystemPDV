@@ -7,6 +7,7 @@ package view;
 
 import beans.ProductDAO;
 import java.util.List;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import model.Product;
 
@@ -215,7 +216,15 @@ public class ManagementProductsScreen extends javax.swing.JPanel {
     }//GEN-LAST:event_btnSaveProductActionPerformed
 
     private void btnDeleteProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteProductActionPerformed
-        // TODO add your handling code here:
+        int confirmation = JOptionPane.showConfirmDialog(null, "Deseja realmente excluir?", "Exclusão", JOptionPane.YES_NO_OPTION);
+
+        if (confirmation == JOptionPane.YES_OPTION) {
+
+            ProductDAO pDAO = new ProductDAO();
+            pDAO.delete(txtSku.getText());
+            cleanForm();
+            getProducts();
+        }
     }//GEN-LAST:event_btnDeleteProductActionPerformed
 
     private void txtValueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtValueActionPerformed
@@ -231,39 +240,36 @@ public class ManagementProductsScreen extends javax.swing.JPanel {
     }//GEN-LAST:event_txtGetSkuActionPerformed
 
     private void btnGetProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGetProductActionPerformed
-       String sku = txtGetSku.getText();
-       
-       ProductDAO pDAO = new ProductDAO();
-       Product p = pDAO.get(sku);
-       
-       if (p == null) {
-           txtSku.setText("");
-           txtCodBar.setText("");
-           txtDescription.setText("");
-           txtValue.setText("");
-           txtNcm.setText("");
-           groupIsActive.clearSelection();
-       } else {
-           txtSku.setText(p.getSku());
-           txtCodBar.setText(p.getBarcode());
-           txtDescription.setText(p.getDescription());
-           txtValue.setText(p.getValue().toString());
-           if (p.isActive()) {
-               rbtnActive.setSelected(true);
-           } else {
-               rbtnInactive.setSelected(true);
-           }
-           txtNcm.setText(p.getNcm().toString());
-       }
+        String sku = txtGetSku.getText();
+
+        ProductDAO pDAO = new ProductDAO();
+        Product p = pDAO.get(sku);
+
+        if (p == null) {
+            cleanForm();
+        } else {
+            txtSku.setText(p.getSku());
+            txtCodBar.setText(p.getBarcode());
+            txtDescription.setText(p.getDescription());
+            txtValue.setText(p.getValue().toString());
+            if (p.isActive()) {
+                rbtnActive.setSelected(true);
+            } else {
+                rbtnInactive.setSelected(true);
+            }
+            txtNcm.setText(p.getNcm().toString());
+        }
     }//GEN-LAST:event_btnGetProductActionPerformed
-    
+
     public void getProducts() {
         ProductDAO p = new ProductDAO();
-        
+
         List<Product> products = p.getAll();
-        
+
         DefaultTableModel tbl = (DefaultTableModel) tblProduct.getModel();
         
+        tbl.setRowCount(0);
+
         for (Product prod : products) {
             Object[] obj = new Object[]{
                 prod.getId(),
@@ -276,6 +282,16 @@ public class ManagementProductsScreen extends javax.swing.JPanel {
             };
             tbl.addRow(obj);
         }
+    }
+
+    private void cleanForm() {
+        txtSku.setText("");
+        txtGetSku.setText("");
+        txtCodBar.setText("");
+        txtDescription.setText("");
+        txtValue.setText("");
+        txtNcm.setText("");
+        groupIsActive.clearSelection();
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
