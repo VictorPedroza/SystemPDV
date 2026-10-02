@@ -88,6 +88,7 @@ public class ProductDAO {
 
             if (rs.next()) {
                 Product p = new Product(
+                        rs.getString("id"),
                         rs.getString("description"),
                         rs.getString("barcode"),
                         rs.getString("sku"),
@@ -116,6 +117,7 @@ public class ProductDAO {
             
             while (rs.next()) {
                 Product p = new Product(
+                        rs.getString("id"),
                         rs.getString("description"),
                         rs.getString("barcode"),
                         rs.getString("sku"),

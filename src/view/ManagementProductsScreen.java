@@ -5,6 +5,11 @@
  */
 package view;
 
+import beans.ProductDAO;
+import java.util.List;
+import javax.swing.table.DefaultTableModel;
+import model.Product;
+
 /**
  *
  * @author victo
@@ -16,6 +21,7 @@ public class ManagementProductsScreen extends javax.swing.JPanel {
      */
     public ManagementProductsScreen() {
         initComponents();
+        getProducts();
     }
 
     /**
@@ -36,9 +42,9 @@ public class ManagementProductsScreen extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         txtSku = new javax.swing.JTextField();
         txtSku1 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        btnGetProduct = new javax.swing.JButton();
+        btnSaveProduct = new javax.swing.JButton();
+        btnDeleteProduct = new javax.swing.JButton();
         txtCodBar = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
@@ -55,7 +61,7 @@ public class ManagementProductsScreen extends javax.swing.JPanel {
 
             },
             new String [] {
-                "SKU", "Descrição", "Cód. Barras", "Valor", "Ativo", "NCM"
+                "ID", "SKU", "Descrição", "Cód. Barras", "Valor", "Ativo", "NCM"
             }
         ));
         jScrollPane1.setViewportView(tblProduct);
@@ -70,19 +76,19 @@ public class ManagementProductsScreen extends javax.swing.JPanel {
             }
         });
 
-        jButton1.setText("Consultar");
+        btnGetProduct.setText("Consultar");
 
-        jButton3.setText("Salvar");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        btnSaveProduct.setText("Salvar");
+        btnSaveProduct.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                btnSaveProductActionPerformed(evt);
             }
         });
 
-        jButton4.setText("Excluir");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        btnDeleteProduct.setText("Excluir");
+        btnDeleteProduct.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                btnDeleteProductActionPerformed(evt);
             }
         });
 
@@ -96,6 +102,7 @@ public class ManagementProductsScreen extends javax.swing.JPanel {
             }
         });
 
+        groupIsActive.add(rbtnActive);
         rbtnActive.setText("Ativo");
         rbtnActive.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -103,6 +110,7 @@ public class ManagementProductsScreen extends javax.swing.JPanel {
             }
         });
 
+        groupIsActive.add(rbtnInactive);
         rbtnInactive.setText("Inativo");
 
         jLabel11.setText("NCM");
@@ -121,12 +129,12 @@ public class ManagementProductsScreen extends javax.swing.JPanel {
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(txtSku1, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jButton1)))
+                            .addComponent(btnGetProduct)))
                     .addComponent(jLabel2)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton3)
+                        .addComponent(btnSaveProduct)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton4))
+                        .addComponent(btnDeleteProduct))
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addComponent(txtDescription, javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createSequentialGroup()
@@ -160,7 +168,7 @@ public class ManagementProductsScreen extends javax.swing.JPanel {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel1)
                             .addComponent(txtSku1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton1))
+                            .addComponent(btnGetProduct))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -191,19 +199,19 @@ public class ManagementProductsScreen extends javax.swing.JPanel {
                             .addComponent(rbtnInactive))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton3)
-                    .addComponent(jButton4))
+                    .addComponent(btnSaveProduct)
+                    .addComponent(btnDeleteProduct))
                 .addGap(32, 32, 32))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void btnSaveProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveProductActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_btnSaveProductActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void btnDeleteProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteProductActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_btnDeleteProductActionPerformed
 
     private void txtValueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtValueActionPerformed
         // TODO add your handling code here:
@@ -214,15 +222,35 @@ public class ManagementProductsScreen extends javax.swing.JPanel {
     }//GEN-LAST:event_rbtnActiveActionPerformed
 
     private void txtSku1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSku1ActionPerformed
-         // TODO add your handling code here:
+        // TODO add your handling code here:
     }//GEN-LAST:event_txtSku1ActionPerformed
-
+    
+    public void getProducts() {
+        ProductDAO p = new ProductDAO();
+        
+        List<Product> products = p.getAll();
+        
+        DefaultTableModel tbl = (DefaultTableModel) tblProduct.getModel();
+        
+        for (Product prod : products) {
+            Object[] obj = new Object[]{
+                prod.getId(),
+                prod.getDescription(),
+                prod.getBarcode(),
+                prod.getSku(),
+                prod.getValue(),
+                prod.isActive(),
+                prod.getNcm()
+            };
+            tbl.addRow(obj);
+        }
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnDeleteProduct;
+    private javax.swing.JButton btnGetProduct;
+    private javax.swing.JButton btnSaveProduct;
     private javax.swing.ButtonGroup groupIsActive;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

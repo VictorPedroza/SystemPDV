@@ -15,7 +15,8 @@ public class Product {
     private Boolean active;
     private Integer ncm;
     
-    public Product(String description, String barcode, String sku, BigDecimal value, Integer ncm) {
+    public Product(String id, String description, String barcode, String sku, BigDecimal value, Integer ncm) {
+        this.id = id;
         this.description = description;
         this.barcode = barcode;
         this.sku = sku;
