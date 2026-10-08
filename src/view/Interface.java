@@ -1,12 +1,13 @@
 package view;
 
 import java.awt.CardLayout;
+import javax.swing.JFrame;
 
 /**
  *
  * @author victo
  */
-public class Interface extends javax.swing.JFrame {
+public class Interface extends JFrame {
 
     private CardLayout layout;
 
@@ -22,12 +23,12 @@ public class Interface extends javax.swing.JFrame {
         InterfacePanel.add(new MenuScreen(), "MENU");
         InterfacePanel.add(new SalesScreen(), "PDV");
         InterfacePanel.add(new SelfSalesScreen(), "AUTOATENDIMENTO");
-        InterfacePanel.add(new ManagementScreen(), "GERENCIA");
 
         layout.show(InterfacePanel, "MENU");
 
-        setSize(1200, 700);
+        setSize(1200, 800);
         setResizable(false);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
     }
 
@@ -51,9 +52,9 @@ public class Interface extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        InterfacePanel.setBackground(new java.awt.Color(255, 255, 255));
+        InterfacePanel.setBackground(new java.awt.Color(245, 247, 250));
         InterfacePanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        getContentPane().add(InterfacePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 900, 700));
+        getContentPane().add(InterfacePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1200, 800));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
