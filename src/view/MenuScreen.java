@@ -7,6 +7,7 @@ package view;
 
 import java.awt.Color;
 import javax.swing.BorderFactory;
+import javax.swing.JPanel;
 
 /**
  *
@@ -20,6 +21,7 @@ public class MenuScreen extends javax.swing.JPanel {
     public MenuScreen() {
         initComponents();
         applyStyles();
+        showContent(new ProductManagementScreen());
     }
 
     /**
@@ -291,11 +293,11 @@ public class MenuScreen extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProductActionPerformed
-        
+        showContent(new ProductManagementScreen());
     }//GEN-LAST:event_btnProductActionPerformed
 
     private void btnSaleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaleActionPerformed
-        // TODO add your handling code here:
+        showContent(new SalesManagementScreen());
     }//GEN-LAST:event_btnSaleActionPerformed
 
     private void btnClientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClientActionPerformed
@@ -324,6 +326,18 @@ public class MenuScreen extends javax.swing.JPanel {
                         0, 0, 0, 1,
                         new Color(160, 160, 160)
                 ));
+    }
+
+    private void showContent(JPanel panel) {
+        ContentPanel.removeAll();
+        panel.setSize(ContentPanel.getSize());
+        panel.setPreferredSize(ContentPanel.getSize());
+
+        ContentPanel.setLayout(new java.awt.BorderLayout());
+        ContentPanel.add(panel, java.awt.BorderLayout.CENTER);
+
+        ContentPanel.revalidate();
+        ContentPanel.repaint();
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
