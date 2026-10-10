@@ -28,29 +28,62 @@ public class ProductManagementScreen extends javax.swing.JPanel {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        btnAddProduct = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tblProduct = new javax.swing.JTable();
+        btnAddProduct1 = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(239, 246, 255));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setFont(new java.awt.Font("SansSerif", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(20, 43, 74));
         jLabel1.setText("Produtos");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 13, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addContainerGap(338, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addContainerGap(271, Short.MAX_VALUE))
-        );
+        jLabel3.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(111, 132, 159));
+        jLabel3.setText("Gerencie seu catálogo, preços e disponibilidade.");
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, -1, -1));
+
+        btnAddProduct.setBackground(new java.awt.Color(244, 50, 11));
+        btnAddProduct.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        btnAddProduct.setForeground(new java.awt.Color(255, 255, 255));
+        btnAddProduct.setIcon(new javax.swing.ImageIcon(getClass().getResource("/public/images/trash.png"))); // NOI18N
+        btnAddProduct.setText("Deletar");
+        add(btnAddProduct, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 520, 130, 51));
+
+        tblProduct.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "ID", "Descrição", "Código de Barras", "SKU", "Valor", "Ativo", "NCM"
+            }
+        ));
+        jScrollPane1.setViewportView(tblProduct);
+        if (tblProduct.getColumnModel().getColumnCount() > 0) {
+            tblProduct.getColumnModel().getColumn(0).setPreferredWidth(5);
+        }
+
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 890, -1));
+
+        btnAddProduct1.setBackground(new java.awt.Color(37, 99, 235));
+        btnAddProduct1.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        btnAddProduct1.setForeground(new java.awt.Color(255, 255, 255));
+        btnAddProduct1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/public/images/plus.png"))); // NOI18N
+        btnAddProduct1.setText("Novo Produto");
+        add(btnAddProduct1, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 520, 180, 51));
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAddProduct;
+    private javax.swing.JButton btnAddProduct1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable tblProduct;
     // End of variables declaration//GEN-END:variables
 }
