@@ -46,6 +46,7 @@ public class MenuScreen extends javax.swing.JPanel {
         btnSalesScreen1 = new javax.swing.JButton();
         ContentPanel = new javax.swing.JPanel();
 
+        setBackground(new java.awt.Color(239, 246, 255));
         setPreferredSize(new java.awt.Dimension(1200, 800));
 
         SidebarMenu.setBackground(new java.awt.Color(20, 43, 74));
@@ -264,6 +265,8 @@ public class MenuScreen extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        ContentPanel.setBackground(new java.awt.Color(239, 246, 255));
+
         javax.swing.GroupLayout ContentPanelLayout = new javax.swing.GroupLayout(ContentPanel);
         ContentPanel.setLayout(ContentPanelLayout);
         ContentPanelLayout.setHorizontalGroup(
@@ -288,7 +291,7 @@ public class MenuScreen extends javax.swing.JPanel {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(ContentPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(SidebarMenu, javax.swing.GroupLayout.DEFAULT_SIZE, 800, Short.MAX_VALUE)
+            .addComponent(SidebarMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
