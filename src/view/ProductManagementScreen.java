@@ -5,6 +5,11 @@
  */
 package view;
 
+import beans.ProductDAO;
+import java.util.List;
+import javax.swing.table.DefaultTableModel;
+import model.Product;
+
 /**
  *
  * @author victo
@@ -16,6 +21,7 @@ public class ProductManagementScreen extends javax.swing.JPanel {
      */
     public ProductManagementScreen() {
         initComponents();
+        getProducts();
     }
 
     /**
@@ -76,7 +82,27 @@ public class ProductManagementScreen extends javax.swing.JPanel {
         btnAddProduct1.setText("Novo Produto");
         add(btnAddProduct1, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 520, 180, 51));
     }// </editor-fold>//GEN-END:initComponents
-
+    
+    public void getProducts() {
+        ProductDAO p = new ProductDAO();
+        
+        List<Product> products = p.getAll();
+        
+        DefaultTableModel table = (DefaultTableModel) tblProduct.getModel();
+        
+        for (Product prod : products) {
+            Object[] obj = new Object[] {
+                prod.getId(),
+                prod.getDescription(),
+                prod.getBarcode(),
+                prod.getSku(),
+                prod.getValue(),
+                prod.isActive(),
+                prod.getNcm()
+            };
+            table.addRow(obj);
+        }
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAddProduct;
