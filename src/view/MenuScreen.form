@@ -73,8 +73,8 @@
                       <Component id="btnSale" alignment="0" max="32767" attributes="0"/>
                       <Component id="btnClient" alignment="0" max="32767" attributes="0"/>
                       <Component id="btnEmployee" alignment="0" max="32767" attributes="0"/>
-                      <Component id="btnEmployee1" alignment="0" max="32767" attributes="0"/>
-                      <Component id="btnSalesScreen1" alignment="0" pref="256" max="32767" attributes="0"/>
+                      <Component id="btnReport" alignment="0" max="32767" attributes="0"/>
+                      <Component id="btnSelfSales" alignment="0" pref="256" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -96,13 +96,13 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="btnEmployee" min="-2" pref="30" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="btnEmployee1" min="-2" pref="30" max="-2" attributes="0"/>
+                  <Component id="btnReport" min="-2" pref="30" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="SidebarSubtitleManagement1" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="btnSalesScreen" min="-2" pref="30" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="btnSalesScreen1" min="-2" pref="30" max="-2" attributes="0"/>
+                  <Component id="btnSelfSales" min="-2" pref="30" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -264,7 +264,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEmployeeActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="btnEmployee1">
+        <Component class="javax.swing.JButton" name="btnReport">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="eb" green="63" red="25" type="rgb"/>
@@ -293,7 +293,7 @@
             <Property name="verifyInputWhenFocusTarget" type="boolean" value="false"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEmployee1ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnReportActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="SidebarSubtitleManagement1">
@@ -343,7 +343,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSalesScreenActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="btnSalesScreen1">
+        <Component class="javax.swing.JButton" name="btnSelfSales">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="eb" green="63" red="25" type="rgb"/>
@@ -372,7 +372,7 @@
             <Property name="verifyInputWhenFocusTarget" type="boolean" value="false"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSalesScreen1ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSelfSalesActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>

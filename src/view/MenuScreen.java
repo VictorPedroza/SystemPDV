@@ -40,10 +40,10 @@ public class MenuScreen extends javax.swing.JPanel {
         btnSale = new javax.swing.JButton();
         btnClient = new javax.swing.JButton();
         btnEmployee = new javax.swing.JButton();
-        btnEmployee1 = new javax.swing.JButton();
+        btnReport = new javax.swing.JButton();
         SidebarSubtitleManagement1 = new javax.swing.JLabel();
         btnSalesScreen = new javax.swing.JButton();
-        btnSalesScreen1 = new javax.swing.JButton();
+        btnSelfSales = new javax.swing.JButton();
         ContentPanel = new javax.swing.JPanel();
 
         setBackground(new java.awt.Color(239, 246, 255));
@@ -147,24 +147,24 @@ public class MenuScreen extends javax.swing.JPanel {
             }
         });
 
-        btnEmployee1.setBackground(new java.awt.Color(37, 99, 235));
-        btnEmployee1.setFont(new java.awt.Font("SansSerif", 1, 20)); // NOI18N
-        btnEmployee1.setForeground(new java.awt.Color(255, 255, 255));
-        btnEmployee1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/public/images/chart-line.png"))); // NOI18N
-        btnEmployee1.setText("Relatórios");
-        btnEmployee1.setToolTipText("");
-        btnEmployee1.setBorder(null);
-        btnEmployee1.setBorderPainted(false);
-        btnEmployee1.setContentAreaFilled(false);
-        btnEmployee1.setFocusPainted(false);
-        btnEmployee1.setHideActionText(true);
-        btnEmployee1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        btnEmployee1.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        btnEmployee1.setIconTextGap(8);
-        btnEmployee1.setVerifyInputWhenFocusTarget(false);
-        btnEmployee1.addActionListener(new java.awt.event.ActionListener() {
+        btnReport.setBackground(new java.awt.Color(37, 99, 235));
+        btnReport.setFont(new java.awt.Font("SansSerif", 1, 20)); // NOI18N
+        btnReport.setForeground(new java.awt.Color(255, 255, 255));
+        btnReport.setIcon(new javax.swing.ImageIcon(getClass().getResource("/public/images/chart-line.png"))); // NOI18N
+        btnReport.setText("Relatórios");
+        btnReport.setToolTipText("");
+        btnReport.setBorder(null);
+        btnReport.setBorderPainted(false);
+        btnReport.setContentAreaFilled(false);
+        btnReport.setFocusPainted(false);
+        btnReport.setHideActionText(true);
+        btnReport.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnReport.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        btnReport.setIconTextGap(8);
+        btnReport.setVerifyInputWhenFocusTarget(false);
+        btnReport.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEmployee1ActionPerformed(evt);
+                btnReportActionPerformed(evt);
             }
         });
 
@@ -195,24 +195,24 @@ public class MenuScreen extends javax.swing.JPanel {
             }
         });
 
-        btnSalesScreen1.setBackground(new java.awt.Color(37, 99, 235));
-        btnSalesScreen1.setFont(new java.awt.Font("SansSerif", 1, 20)); // NOI18N
-        btnSalesScreen1.setForeground(new java.awt.Color(255, 255, 255));
-        btnSalesScreen1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/public/images/monitor.png"))); // NOI18N
-        btnSalesScreen1.setText("PDV Autoatendimento");
-        btnSalesScreen1.setToolTipText("");
-        btnSalesScreen1.setBorder(null);
-        btnSalesScreen1.setBorderPainted(false);
-        btnSalesScreen1.setContentAreaFilled(false);
-        btnSalesScreen1.setFocusPainted(false);
-        btnSalesScreen1.setHideActionText(true);
-        btnSalesScreen1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        btnSalesScreen1.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        btnSalesScreen1.setIconTextGap(8);
-        btnSalesScreen1.setVerifyInputWhenFocusTarget(false);
-        btnSalesScreen1.addActionListener(new java.awt.event.ActionListener() {
+        btnSelfSales.setBackground(new java.awt.Color(37, 99, 235));
+        btnSelfSales.setFont(new java.awt.Font("SansSerif", 1, 20)); // NOI18N
+        btnSelfSales.setForeground(new java.awt.Color(255, 255, 255));
+        btnSelfSales.setIcon(new javax.swing.ImageIcon(getClass().getResource("/public/images/monitor.png"))); // NOI18N
+        btnSelfSales.setText("PDV Autoatendimento");
+        btnSelfSales.setToolTipText("");
+        btnSelfSales.setBorder(null);
+        btnSelfSales.setBorderPainted(false);
+        btnSelfSales.setContentAreaFilled(false);
+        btnSelfSales.setFocusPainted(false);
+        btnSelfSales.setHideActionText(true);
+        btnSelfSales.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnSelfSales.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        btnSelfSales.setIconTextGap(8);
+        btnSelfSales.setVerifyInputWhenFocusTarget(false);
+        btnSelfSales.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSalesScreen1ActionPerformed(evt);
+                btnSelfSalesActionPerformed(evt);
             }
         });
 
@@ -235,8 +235,8 @@ public class MenuScreen extends javax.swing.JPanel {
                     .addComponent(btnSale, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnClient, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnEmployee, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnEmployee1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnSalesScreen1, javax.swing.GroupLayout.DEFAULT_SIZE, 256, Short.MAX_VALUE))
+                    .addComponent(btnReport, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnSelfSales, javax.swing.GroupLayout.DEFAULT_SIZE, 256, Short.MAX_VALUE))
                 .addContainerGap())
         );
         SidebarMenuLayout.setVerticalGroup(
@@ -255,13 +255,13 @@ public class MenuScreen extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnEmployee, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnEmployee1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnReport, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(SidebarSubtitleManagement1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnSalesScreen, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnSalesScreen1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnSelfSales, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -304,24 +304,24 @@ public class MenuScreen extends javax.swing.JPanel {
     }//GEN-LAST:event_btnSaleActionPerformed
 
     private void btnClientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClientActionPerformed
-        // TODO add your handling code here:
+        showContent(new ClientManagementScreen());
     }//GEN-LAST:event_btnClientActionPerformed
 
     private void btnEmployeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEmployeeActionPerformed
-        // TODO add your handling code here:
+        showContent(new EmployeeManagementScreen());
     }//GEN-LAST:event_btnEmployeeActionPerformed
 
-    private void btnEmployee1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEmployee1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnEmployee1ActionPerformed
+    private void btnReportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReportActionPerformed
+        showContent(new ReportScreen());
+    }//GEN-LAST:event_btnReportActionPerformed
 
     private void btnSalesScreenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalesScreenActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_btnSalesScreenActionPerformed
 
-    private void btnSalesScreen1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalesScreen1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnSalesScreen1ActionPerformed
+    private void btnSelfSalesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSelfSalesActionPerformed
+        
+    }//GEN-LAST:event_btnSelfSalesActionPerformed
 
     private void applyStyles() {
         SidebarMenu.setBorder(
@@ -350,11 +350,11 @@ public class MenuScreen extends javax.swing.JPanel {
     private javax.swing.JLabel SidebarSubtitleManagement1;
     private javax.swing.JButton btnClient;
     private javax.swing.JButton btnEmployee;
-    private javax.swing.JButton btnEmployee1;
     private javax.swing.JButton btnProduct;
+    private javax.swing.JButton btnReport;
     private javax.swing.JButton btnSale;
     private javax.swing.JButton btnSalesScreen;
-    private javax.swing.JButton btnSalesScreen1;
+    private javax.swing.JButton btnSelfSales;
     private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
 }
