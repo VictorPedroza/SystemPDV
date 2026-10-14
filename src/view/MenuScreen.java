@@ -15,12 +15,15 @@ import javax.swing.JPanel;
  */
 public class MenuScreen extends javax.swing.JPanel {
 
+    private Interface mainScreen;
+
     /**
      * Creates new form MenuScreen
      */
-    public MenuScreen() {
+    public MenuScreen(Interface mainScreen) {
         initComponents();
         applyStyles();
+        this.mainScreen = mainScreen;
         showContent(new ProductManagementScreen());
     }
 
@@ -316,11 +319,11 @@ public class MenuScreen extends javax.swing.JPanel {
     }//GEN-LAST:event_btnReportActionPerformed
 
     private void btnSalesScreenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalesScreenActionPerformed
-        
+        mainScreen.showScreen("PDV");
     }//GEN-LAST:event_btnSalesScreenActionPerformed
 
     private void btnSelfSalesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSelfSalesActionPerformed
-        
+        mainScreen.showScreen("AUTOATENDIMENTO");
     }//GEN-LAST:event_btnSelfSalesActionPerformed
 
     private void applyStyles() {

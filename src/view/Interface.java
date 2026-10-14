@@ -20,7 +20,7 @@ public class Interface extends JFrame {
         layout = new CardLayout();
         InterfacePanel.setLayout(layout);
 
-        InterfacePanel.add(new MenuScreen(), "MENU");
+        InterfacePanel.add(new MenuScreen(this), "MENU");
         InterfacePanel.add(new SalesScreen(), "PDV");
         InterfacePanel.add(new SelfSalesScreen(), "AUTOATENDIMENTO");
 
