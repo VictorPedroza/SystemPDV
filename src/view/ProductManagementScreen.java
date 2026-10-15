@@ -6,7 +6,12 @@
 package view;
 
 import beans.ProductDAO;
+import java.awt.GridLayout;
 import java.util.List;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 import model.Product;
 
@@ -80,18 +85,82 @@ public class ProductManagementScreen extends javax.swing.JPanel {
         btnAddProduct1.setForeground(new java.awt.Color(255, 255, 255));
         btnAddProduct1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/public/images/plus.png"))); // NOI18N
         btnAddProduct1.setText("Novo Produto");
+        btnAddProduct1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddProduct1ActionPerformed(evt);
+            }
+        });
         add(btnAddProduct1, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 520, 180, 51));
     }// </editor-fold>//GEN-END:initComponents
-    
+
+    private void btnAddProduct1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddProduct1ActionPerformed
+
+        JTextField txtDescription = new JTextField();
+        JTextField txtCodeBar = new JTextField();
+        JTextField txtSku = new JTextField();
+        JTextField txtValue = new JTextField();
+        JTextField txtNcm = new JTextField();
+        
+        JPanel painel = new JPanel(new GridLayout(3, 2, 5, 10));
+
+        painel.add(new JLabel("Descrição do produto: "));
+        painel.add(txtDescription);
+
+        painel.add(new JLabel("Código de Barras: "));
+        painel.add(txtCodeBar);
+
+        painel.add(new JLabel("SKU: "));
+        painel.add(txtSku);
+        
+        painel.add(new JLabel("Valor: "));
+        painel.add(txtValue);
+        
+        painel.add(new JLabel("NCM: "));
+        painel.add(txtNcm);
+
+        int opcao = JOptionPane.showConfirmDialog(
+                this,
+                painel,
+                "Adicionar Produto",
+                JOptionPane.OK_CANCEL_OPTION,
+                JOptionPane.PLAIN_MESSAGE
+        );
+
+        if (opcao == JOptionPane.OK_OPTION) {
+
+            String nome = txtDescription.getText().trim();
+            String preco = txtCodeBar.getText().trim();
+            String quantidade = txtSku.getText().trim();
+
+            if (nome.isEmpty() || preco.isEmpty() || quantidade.isEmpty()) {
+                JOptionPane.showMessageDialog(
+                        this,
+                        "Preencha todos os campos!",
+                        "Aviso",
+                        JOptionPane.WARNING_MESSAGE
+                );
+                return;
+            }
+
+            JOptionPane.showMessageDialog(
+                    this,
+                    "Produto preenchido!\n"
+                    + "Nome: " + nome + "\n"
+                    + "Preço: " + preco + "\n"
+                    + "Quantidade: " + quantidade
+            );
+        }
+    }//GEN-LAST:event_btnAddProduct1ActionPerformed
+
     public void getProducts() {
         ProductDAO p = new ProductDAO();
-        
+
         List<Product> products = p.getAll();
-        
+
         DefaultTableModel table = (DefaultTableModel) tblProduct.getModel();
-        
+
         for (Product prod : products) {
-            Object[] obj = new Object[] {
+            Object[] obj = new Object[]{
                 prod.getId(),
                 prod.getDescription(),
                 prod.getBarcode(),
