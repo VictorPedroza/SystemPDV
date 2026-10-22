@@ -14,6 +14,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 import model.Product;
+import view.form.AddProductForm;
 
 /**
  *
@@ -94,60 +95,31 @@ public class ProductManagementScreen extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAddProduct1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddProduct1ActionPerformed
-
-        JTextField txtDescription = new JTextField();
-        JTextField txtCodeBar = new JTextField();
-        JTextField txtSku = new JTextField();
-        JTextField txtValue = new JTextField();
-        JTextField txtNcm = new JTextField();
-        
-        JPanel painel = new JPanel(new GridLayout(3, 2, 5, 10));
-
-        painel.add(new JLabel("Descrição do produto: "));
-        painel.add(txtDescription);
-
-        painel.add(new JLabel("Código de Barras: "));
-        painel.add(txtCodeBar);
-
-        painel.add(new JLabel("SKU: "));
-        painel.add(txtSku);
-        
-        painel.add(new JLabel("Valor: "));
-        painel.add(txtValue);
-        
-        painel.add(new JLabel("NCM: "));
-        painel.add(txtNcm);
+        AddProductForm form = new AddProductForm();
 
         int opcao = JOptionPane.showConfirmDialog(
                 this,
-                painel,
+                form,
                 "Adicionar Produto",
                 JOptionPane.OK_CANCEL_OPTION,
                 JOptionPane.PLAIN_MESSAGE
         );
 
-        if (opcao == JOptionPane.OK_OPTION) {
-
-            String nome = txtDescription.getText().trim();
-            String preco = txtCodeBar.getText().trim();
-            String quantidade = txtSku.getText().trim();
-
-            if (nome.isEmpty() || preco.isEmpty() || quantidade.isEmpty()) {
-                JOptionPane.showMessageDialog(
-                        this,
-                        "Preencha todos os campos!",
-                        "Aviso",
-                        JOptionPane.WARNING_MESSAGE
-                );
-                return;
-            }
-
+        if (opcao == JOptionPane.OK_OPTION) {   
+            Product newProd = new Product(
+                    form.getDescription(),
+                    form.getCodeBar().toString(),
+                    form.getSku(),
+                    form.getValue(),
+                    form.getNcm()
+            );
+            ProductDAO p = new ProductDAO();
+            
+            p.insert(newProd);
+            
             JOptionPane.showMessageDialog(
                     this,
-                    "Produto preenchido!\n"
-                    + "Nome: " + nome + "\n"
-                    + "Preço: " + preco + "\n"
-                    + "Quantidade: " + quantidade
+                    "Produto preenchido!\n" + "Descrição: " + form.getDescription()
             );
         }
     }//GEN-LAST:event_btnAddProduct1ActionPerformed

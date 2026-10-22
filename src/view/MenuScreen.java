@@ -24,8 +24,10 @@ public class MenuScreen extends javax.swing.JPanel {
         initComponents();
         applyStyles();
         this.mainScreen = mainScreen;
-        showContent(new ProductManagementScreen());
-    }
+
+        ProductManagementScreen productScreen = new ProductManagementScreen();
+        showContent(productScreen);
+}
 
     /**
      * This method is called from within the constructor to initialize the form.

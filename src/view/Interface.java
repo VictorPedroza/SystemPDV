@@ -9,14 +9,14 @@ import javax.swing.JFrame;
  */
 public class Interface extends JFrame {
 
-    private CardLayout layout;
+    private final CardLayout layout;
 
     /**
      * Creates new form Interface
      */
     public Interface() {
         initComponents();
-
+        
         layout = new CardLayout();
         InterfacePanel.setLayout(layout);
 
