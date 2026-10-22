@@ -88,13 +88,13 @@ public class ProductDAO {
 
             if (rs.next()) {
                 Product p = new Product(
-                        rs.getString("id"),
                         rs.getString("description"),
                         rs.getString("barcode"),
                         rs.getString("sku"),
                         rs.getBigDecimal("value"),
                         rs.getObject("ncm", Integer.class)
                 );
+                p.setId(Integer.parseInt(rs.getString("id")));
 
                 return p;
             }
@@ -114,17 +114,16 @@ public class ProductDAO {
         try {
             PreparedStatement stmt = conn.prepareStatement(sql, ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
             ResultSet rs = stmt.executeQuery();
-            
+
             while (rs.next()) {
                 Product p = new Product(
-                        rs.getString("id"),
                         rs.getString("description"),
                         rs.getString("barcode"),
                         rs.getString("sku"),
                         rs.getBigDecimal("value"),
                         rs.getObject("ncm", Integer.class)
                 );
-
+                p.setId(Integer.parseInt(rs.getString("id")));
                 products.add(p);
             }
 
