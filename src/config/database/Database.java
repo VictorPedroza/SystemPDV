@@ -15,7 +15,7 @@ import java.sql.DriverManager;
 public class Database {
     public Connection getConnection() {
         try {
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3307/system_pdv?useTimezone=true&serverTimezone=UTC","root","");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/system_pdv?useTimezone=true&serverTimezone=UTC","root","");
             System.out.println("Conexão realizada com sucesso!");
             
             return conn;
