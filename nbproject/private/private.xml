@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="3">
+        <file>
+            <url>src/beans/ProductDAO.java</url>
+            <bookmark id="1">
+                <name/>
+                <line>29</line>
+                <key/>
+            </bookmark>
+        </file>
+        <file>
+            <url>src/model/Product.java</url>
+            <bookmark id="2">
+                <name/>
+                <line>33</line>
+                <key/>
+            </bookmark>
+        </file>
+        <file>
+            <url>src/view/MenuScreen.java</url>
+            <bookmark id="3">
+                <name/>
+                <line>312</line>
+                <key/>
+            </bookmark>
+        </file>
+    </editor-bookmarks>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/Users/victo/OneDrive/Documents/NetBeansProjects/SystemPDV/src/com/systempdv/model/Sale.java</file>
+            <file>file:/C:/Users/victo/OneDrive/Documents/NetBeansProjects/SystemPDV/src/com/systempdv/ui/LoginFrame.java</file>
+            <file>file:/C:/Users/victo/OneDrive/Documents/NetBeansProjects/SystemPDV/src/com/systempdv/ui/layouts/AdminLayout.java</file>
+            <file>file:/C:/Users/victo/OneDrive/Documents/NetBeansProjects/SystemPDV/src/com/systempdv/model/SaleItem.java</file>
+            <file>file:/C:/Users/victo/OneDrive/Documents/NetBeansProjects/SystemPDV/src/com/systempdv/beans/SaleDAO.java</file>
+            <file>file:/C:/Users/victo/OneDrive/Documents/NetBeansProjects/SystemPDV/src/com/systempdv/ui/layouts/SalesLayout.java</file>
+            <file>file:/C:/Users/victo/OneDrive/Documents/NetBeansProjects/SystemPDV/src/com/systempdv/beans/ProductDAO.java</file>
+            <file>file:/C:/Users/victo/OneDrive/Documents/NetBeansProjects/SystemPDV/src/com/systempdv/ui/ProductFormDialog.java</file>
+            <file>file:/C:/Users/victo/OneDrive/Documents/NetBeansProjects/SystemPDV/src/com/systempdv/model/PaymentMethod.java</file>
+            <file>file:/C:/Users/victo/OneDrive/Documents/NetBeansProjects/SystemPDV/src/com/systempdv/ui/ProductPanel.java</file>
+            <file>file:/C:/Users/victo/OneDrive/Documents/NetBeansProjects/SystemPDV/src/com/systempdv/service/SaleService.java</file>
+            <file>file:/C:/Users/victo/OneDrive/Documents/NetBeansProjects/SystemPDV/src/Main.java</file>
+            <file>file:/C:/Users/victo/OneDrive/Documents/NetBeansProjects/SystemPDV/src/com/systempdv/ui/Interface.java</file>
+        </group>
+    </open-files>
+</project-private>
