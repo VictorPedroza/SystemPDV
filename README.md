@@ -179,9 +179,3 @@ Esses relacionamentos são garantidos por meio de chaves estrangeiras (*Foreign 
 - As credenciais de conexão devem ser configuradas corretamente no arquivo `application.properties`.
 - O modo Administrativo exige um usuário com permissão de administrador.
 - O controle de estoque é realizado automaticamente pela trigger após a inserção de itens de venda.
-
----
-
-## Licença
-
-Consulte o repositório para obter informações sobre os termos de uso e distribuição do projeto.
